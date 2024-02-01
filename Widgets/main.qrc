@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>SwicthButton.qml</file>
+        <file>Dashboard2D.qml</file>
+        <file>res/close.png</file>
+        <file>res/loading.png</file>
+        <file>res/open.png</file>
+        <file>ArrayList.qml</file>
+    </qresource>
+</RCC>
