@@ -23,7 +23,7 @@ QVariant QmlArrayList::data(const QModelIndex &index, int role) const
     if (!index.isValid())
         return QVariant();
 
-    qDebug()<<"data index :"<<index.row();
+    qDebug()<<"data index :"<<index.row()<<"role:"<<role;
     return m_data.at(index.row());
 }
 

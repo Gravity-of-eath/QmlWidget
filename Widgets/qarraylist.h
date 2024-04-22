@@ -14,9 +14,12 @@ public:
 
     Q_INVOKABLE void add(const QVariant &value);
     Q_INVOKABLE QVariant get(int index) const;
+    Q_INVOKABLE QVariant getTop() const;
     Q_INVOKABLE int size() const;
-    Q_INVOKABLE void remove(int index)  ;
-    Q_INVOKABLE void pop() ;
+    Q_INVOKABLE void remove(int index);
+    Q_INVOKABLE void pop();
+    Q_INVOKABLE void clear();
+
     ~QArrayList();
 signals:
     void countChanged();

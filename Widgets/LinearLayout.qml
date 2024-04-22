@@ -1,5 +1,5 @@
-import QtQuick 2.3
-import QtQuick.Controls 2.3
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 
 Rectangle {
     id: root
@@ -8,6 +8,7 @@ Rectangle {
     property bool centerHorizontal: false
     property bool centerVertical: false
     color: "#00000000"
+    clip: true
     onChildrenChanged: {
         requestUpdate()
     }
@@ -16,7 +17,7 @@ Rectangle {
     }
     function layout() {
         console.log(tag + "root width: " + width + " " + "root height: "
-                    + height + " " + "verticalLayout:" + verticalLayout)
+                    + height + " " + "verticalLayout:" + verticalLayout+"   children.length= "+children.length)
         var i = 0
         var child
         var visibleChildCount = 0
@@ -80,7 +81,7 @@ Rectangle {
             var totalUseHspace = 0
             visibleChildCount = 0
             var maxChildHeight = 0
-            for (i = 0; i < children.lenght; i++) {
+            for (i = 0; i < children.length; i++) {
                 child = children[i]
                 if (child.visible) {
                     totalUseHspace += child.width
@@ -96,6 +97,7 @@ Rectangle {
                     console.log("child :" + child.id + "  child.visible:" + child.visible)
                 }
             }
+             console.log("totalUseHspace :" + totalUseHspace + "  maxChildHeight:" + maxChildHeight)
             if (root.width === 0) {
                 root.width = totalUseHspace
             }
@@ -106,7 +108,7 @@ Rectangle {
             if (centerHorizontal) {
                 var spaceH = (width - totalUseHspace) / (visibleChildCount + 1)
                 var usedHspace = spaceH
-                for (i = 0; i < children.lenght; i++) {
+                for (i = 0; i < children.length; i++) {
                     child = children[i]
                     if (child.visible) {
                         usedHspace += child.anchors.leftMargin
@@ -120,8 +122,9 @@ Rectangle {
                 }
             } else {
                 usedHspace = 0
-                for (i = 0; i < children.lenght; i++) {
+                for (i = 0; i < children.length; i++) {
                     child = children[i]
+                    console.log("usedHspace :" + usedHspace + "  child.width:" + child.width)
                     if (child.visible) {
                         usedHspace += child.anchors.leftMargin
                         child.x = usedHspace

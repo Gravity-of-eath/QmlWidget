@@ -8,13 +8,11 @@ uri = com.mycompany.qmlcomponents
 
 # Input
 SOURCES += \
-        asd.cpp \
         qarraylist.cpp \
         qmlarraylist.cpp \
         widgets_plugin.cpp
 
 HEADERS += \
-        asd.h \
         qarraylist.h \
         qmlarraylist.h \
         widgets_plugin.h

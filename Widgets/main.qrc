@@ -6,7 +6,8 @@
         <file>res/loading.png</file>
         <file>res/open.png</file>
         <file>ArrayList.qml</file>
-		<file>FragmentManager.qml</file>
-		<file>LinearLayout.qml</file>
+        <file>FragmentManager.qml</file>
+        <file>LinearLayout.qml</file>
+        <file>AbsFragment.qml</file>
     </qresource>
 </RCC>
